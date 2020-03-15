@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Praktikum_PPB</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Wildan Tamma Faza Chair</string>
+    <string name="nav_header_subtitle">Wildatntammafazachair877@gmail.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Tugas 1</string>
+    <string name="menu_gallery">Tugas 2</string>
+    <string name="menu_slideshow">Tugas 3</string>
+
+    <string name="home_second">Home Second</string>
+</resources>
