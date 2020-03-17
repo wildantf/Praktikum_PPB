@@ -1,5 +1,6 @@
 package com.dicoding.picodiploma.praktikum_ppb.ui.tugas1;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -37,6 +38,7 @@ public class Tugas1Fragment extends Fragment {
             @Override
             public void onClick(View v) {
                 HitungBmi();
+
             }
         });
 
@@ -50,27 +52,34 @@ public class Tugas1Fragment extends Fragment {
 //        });
         return root;
     }
-
     private void HitungBmi() {
         String Nama=etNama.getText().toString();
-        Double TB= (Double.parseDouble(etTB.getText().toString()))/100;
-        Double BB = Double.parseDouble(etBB.getText().toString());
-        Double BMI = (BB)/(TB*TB);
-        String arti="";
-        if (BMI<18.4){
-           arti="Under Weight";
-        }else if(BMI<25 ) {
-            arti = "Normal Weight";
-        }else if(BMI<30){
-            arti="Over Weight";
-        }else if(BMI<35){
-            arti="Obesity 1";
-        }else if(BMI<40){
-            arti="Obesity 2";
-        }else if(BMI>=40){
-            arti="Obesity 3";
+        String TBs=etTB.getText().toString();
+        String BBs=etBB.getText().toString();
+//        Value harus dicek dulu baru di convert
+        if (!BBs.equals("") && !TBs.equals("")) {
+            Double TB = Double.parseDouble(TBs)/100;
+            Double BB = Double.parseDouble(BBs);
+            Double BMI = (BB)/(TB*TB);
+            String arti="";
+            if (BMI<18.4){
+                arti="Under Weight";
+            }else if(BMI<25 ) {
+                arti = "Normal Weight";
+            }else if(BMI<30){
+                arti="Over Weight";
+            }else if(BMI<35){
+                arti="Obesity 1";
+            }else if(BMI<40){
+                arti="Obesity 2";
+            }else if(BMI>=40){
+                arti="Obesity 3";
+            }
+            tvHasil.setText(Nama + " Memiliki Nilai BMI = " + BMI + " Yang Berarti " + arti);
         }
-        tvHasil.setText(Nama+" Memiliki Nilai BMI = "+BMI+" Yang Berarti "+ arti );
+        else{
+            tvHasil.setText(""+Nama+" kamu harus memasukkan nilai TB Dan BB");
+        }
     }
 
 }
